@@ -19,8 +19,6 @@ const App = () => {
 		<div className='grid place-items-center min-h-screen bg-bgColor'>
 			{(() => {
 				switch (gameOn) {
-					case null:
-						return <Welcome startGame={startGame} />;
 					case true:
 						return (
 							<Game
@@ -40,7 +38,7 @@ const App = () => {
 							/>
 						);
 					default:
-						return null;
+						return <Welcome startGame={startGame} />;;
 				}
 			})()}
 		</div>

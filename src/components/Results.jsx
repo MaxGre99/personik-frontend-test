@@ -4,7 +4,7 @@ import Timer from './Timer';
 
 const Results = ({ victory, lastCity, citiesCount, startGame }) => {
 	return (
-		<div className='w-544 h-464 flex flex-col content-end border border-inherit shadow bg-white rounded-2xl text-center justify-around'>
+		<div className='xs:w-full sm:w-1/2 md:w-380 lg:w-544 h-auto flex flex-col content-end border border-inherit shadow bg-white rounded-2xl text-center gap-4 py-5'>
 			{victory ? (
 				<p>
 					Поздравляем тебя с победой! <br /> Твой противник не вспомнил нужный
@@ -28,7 +28,7 @@ const Results = ({ victory, lastCity, citiesCount, startGame }) => {
 			</p>
 			<button
 				type='button'
-				className='w-180 h-40 bg-startButton text-white border-inherit rounded text-base my-6 mx-auto' onClick={startGame}>
+				className='w-180 h-40 bg-startButton text-white border-inherit rounded text-base mx-auto' onClick={startGame}>
 				Начать новую игру
 			</button>
 		</div>

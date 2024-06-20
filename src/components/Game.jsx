@@ -136,7 +136,7 @@ const Game = ({ setVictory, setGameOn, usedCities, setUsedCities }) => {
 	}, [usedCities]);
 
 	return (
-		<div className='w-576 h-485 text-base border border-inherit shadow bg-white rounded-2xl'>
+		<div className='w-full lg:w-576 h-auto lg:h-485 text-base border border-inherit shadow bg-white rounded-2xl'>
 			<div className='flex items-center justify-between px-5 h-64'>
 				{yourTurn ? (
 					<h1>Сейчас ваша очередь</h1>
@@ -168,7 +168,6 @@ const Game = ({ setVictory, setGameOn, usedCities, setUsedCities }) => {
 					</div>
 				)}
 			</div>
-
 			<form
 				onSubmit={formik.handleSubmit}
 				className='flex flex-col items-center'>
@@ -209,11 +208,13 @@ const Game = ({ setVictory, setGameOn, usedCities, setUsedCities }) => {
 						</svg>
 					</button>
 				</div>
+				<div className='container px-5 py-0.5 py-0.5 min-h-7 mt-0.5'>
 				{formik.touched.city && formik.errors.city ? (
-					<p className='bg-red-500 text-white text-sm border-inherit rounded px-5 my-0.5 py-0.5'>
+					<p className='text-center text-red-500 text-sm border-inherit rounded px-5 my-0.5 py-0.5'>
 						{formik.errors.city}
 					</p>
 				) : null}
+				</div>
 			</form>
 		</div>
 	);
