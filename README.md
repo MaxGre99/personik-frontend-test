@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+# Тестовое задание для frontend-разработчика
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Привет!
 
-## Available Scripts
+Это страничка тестового задания для вакансии на frontend-разработчика в команду Personik.
 
-In the project directory, you can run:
+Задание расчитано на ~3-4 часа. Что мы проверяем:
 
-### `npm start`
+- Верстка, кроссбраузерная, адаптивная, применение Tailwind
+- Умение работать с макетом в Figma
+- Умение разделять код на компоненты
+- Умение писать осознанные коммиты
+- Умение предлагать варианты для решения поставленной задачи
+- Код стайл, аккуратность (желательно использование prettier)
+- Стремление к развитию, не бойся делать ошибки
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Задача
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Необходимо разработать "легкую" версию онлайн-игры в "Города".
 
-### `npm test`
+В качестве оппонента, мы предлагаем тебе написать функцию, которая будет брать города из заготовленного списка (список городов прилагается в репозитории). Главное не забудь учитывать правила игры – города не могут повторяться.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Для имитации живого игрока нужно написать функцию так, чтобы ответ от нее приходил с задержкой.
 
-### `npm run build`
+В репозитории есть макет для Figma, в котором ты можешь найти финальный дизайн для игры.
+Обрати внимание на отступы, выравнивания по центру, на размерности.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+В первой вкладке расположен макет, во второй tailwindcss конфигурация (она соответсвует конфигурации по умолчанию).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Все размеры в макете подходят под размеры tailwind классов. Например: максимальная ширина окна - 576px, соответсвует классу max-w-xl.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Для работы над текстом в первом слайде рекомендуем использовать класс `.prose` из tailwind плагина [Typography](https://tailwindcss.com/docs/typography-plugin)
 
-### `npm run eject`
+Так же необходимо реализовать таймер обратного отсчета, по умолчанию на 2 минуты. Если игрок или функция "ИИ" не успеет дать нужный ответ, мы можем определить победителя и проигравшего.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Для более качественной работы необходимо добавить валидацию вводимых городов на существование (1), по первой букве (2) и на повторение (3). 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Стек и технические требования
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- React 18
+- Tailwind
+- Использование typescript желательно
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Роутинг делать не обязательно, если тебе будет достаточно работы в одном родительском компоненте.
 
-## Learn More
+Pixel Perfect оценивать не будем, но жирным плюсом будет, если классы из tailwind будут верно подобраны и подходить под размеры макета.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Решение должно быть выложено в публичном репозитории на github, чтобы можно было его проверить.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+В остальном требований к проекту нет, можно использовать любые вспомогательные библиотеки на твой вкус (такие как day.js для работы с датой и тд).
+Будет плюсом, если ты умеешь обходится без "готовых компонентов".
 
-### Code Splitting
+## Рекомендуемый порядок работы
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- [ ] Развернуть и настроить проект (не забудь про prettier, gitignore)
+- [ ] Сверстать макет из Figma
+- [ ] Разбить верстку на компоненты
+- [ ] Определить файловую систему
+- [ ] Определить формат данных и место для хранения городов
+- [ ] Реализовать логику для иммитации ответов
+- [ ] Реализовать логику начала игры, ответов пользователя, состояние ожидания ответа
+- [ ] Соеденить логику иммитации ответов с логикой ответов пользователя
+- [ ] Немного поиграть
+- [ ] Реализовать валидацию ввода города по существованию (1) по первой букве (2) и повторения города (3)
+- [ ] Поиграть и проверить валидацию
+- [ ] Добавить таймер для ответов
+- [ ] Добавить рандомную генерацию таймера для логики имитации ответов (10-121 сек)
+- [ ] Реализовать сценарий победы
+- [ ] Реализовать сценарий поражения
+- [ ] Поиграть, поиграть, поиграть
 
-### Analyzing the Bundle Size
+## Результаты
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Присылай нам вариант решения в виде ссылки на github репозиторий.
 
-### Making a Progressive Web App
+Если тебе что-либо не удалось реализовать, прикладывай пояснение к своей работе для общего разбора полетов. Мы приветсвуем любые результаты, даже если у тебя что-то не получается реализовать.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Желательно добавить в репозиторий README файл, в котором описать решение, процесс развертывания, и любые комментарии, которые мы должны учесть при проверке задания.
 
-### Advanced Configuration
+Если возникают любые вопросы по заданию - пиши нам, ответим на все вопросы без исключения!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Желаем успехов! Надеемся, что задание окажется интересным!
 
-### Deployment
+## Скриншоты игры
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<p align="center">
+  <img src="./screenshots/Welcome.jpg" width="802" />
+</p>
 
-### `npm run build` fails to minify
+<p align="center">
+  <img src="./screenshots/FirstCity.jpg" width="802" />
+</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="center">
+  <img src="./screenshots/OpponentWaiting.jpg" width="802" />
+</p>
+
+<p align="center">
+  <img src="./screenshots/ListOfCities.jpg" width="802" />
+</p>
+
+<p align="center">
+  <img src="./screenshots/Fail.jpg" width="802" />
+</p>
+
+<p align="center">
+  <img src="./screenshots/Win.jpg" width="802" />
+</p>
