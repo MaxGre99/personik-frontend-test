@@ -10,30 +10,39 @@ const App = () => {
 	const [victory, setVictory] = useState(null);
 	const [usedCities, setUsedCities] = useState([]);
 
-  const startGame = () => {
-    setUsedCities([]);
-    setGameOn(true)
-  };
+	const startGame = () => {
+		setUsedCities([]);
+		setGameOn(true);
+	};
 
 	return (
 		<div className='grid place-items-center min-h-screen bg-bgColor'>
-			{gameOn === null && <Welcome startGame={startGame} />}
-			{gameOn === true && (
-				<Game
-					setVictory={setVictory}
-					setGameOn={setGameOn}
-					usedCities={usedCities}
-					setUsedCities={setUsedCities}
-				/>
-			)}
-			{gameOn === false && (
-				<Results
-					victory={victory}
-					lastCity={usedCities.at(-1)}
-					citiesCount={usedCities.length}
-          startGame={startGame}
-				/>
-			)}
+			{(() => {
+				switch (gameOn) {
+					case null:
+						return <Welcome startGame={startGame} />;
+					case true:
+						return (
+							<Game
+								setVictory={setVictory}
+								setGameOn={setGameOn}
+								usedCities={usedCities}
+								setUsedCities={setUsedCities}
+							/>
+						);
+					case false:
+						return (
+							<Results
+								victory={victory}
+								lastCity={usedCities.at(-1)}
+								citiesCount={usedCities.length}
+								startGame={startGame}
+							/>
+						);
+					default:
+						return null;
+				}
+			})()}
 		</div>
 	);
 };

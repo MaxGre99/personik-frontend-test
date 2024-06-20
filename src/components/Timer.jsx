@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/index.css';
 
 const Timer = ({ timeLeft = 0, color = 'black' }) => {
 	const minutes = Math.floor(timeLeft / 60);
