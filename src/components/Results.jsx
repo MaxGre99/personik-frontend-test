@@ -4,7 +4,7 @@ import Timer from './Timer';
 
 const Results = ({ victory, lastCity, citiesCount, startGame }) => {
 	return (
-		<div className='w-full sm:w-2/3 md:w-1/2 lg:w-1/3 h-full sm:h-2/3 md:h-1/2 lg:1/3 text-base sm:text-lg md:text-xl lg:text-2xl flex flex-col content-end border border-inherit shadow bg-white rounded-2xl text-center justify-around'>
+		<div className='w-544 h-464 flex flex-col content-end border border-inherit shadow bg-white rounded-2xl text-center justify-around'>
 			{victory ? (
 				<p>
 					Поздравляем тебя с победой! <br /> Твой противник не вспомнил нужный

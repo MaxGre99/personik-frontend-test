@@ -130,13 +130,13 @@ const Game = ({ setVictory, setGameOn, usedCities, setUsedCities }) => {
 	}, [usedCities]);
 
 	useEffect(() => {
-    if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [usedCities]);
+		if (messagesEndRef.current) {
+			messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+		}
+	}, [usedCities]);
 
 	return (
-		<div className='w-full sm:w-2/3 md:w-1/2 lg:w-1/3 h-full sm:h-2/3 md:h-1/2 lg:1/3 text-base sm:text-lg md:text-xl lg:text-2xl border border-inherit shadow bg-white rounded-2xl'>
+		<div className='w-576 h-485 text-base border border-inherit shadow bg-white rounded-2xl'>
 			<div className='flex items-center justify-between px-5 h-64'>
 				{yourTurn ? (
 					<h1>Сейчас ваша очередь</h1>
@@ -156,10 +156,10 @@ const Game = ({ setVictory, setGameOn, usedCities, setUsedCities }) => {
 						{usedCities.map((city, index) => (
 							<div
 								key={index}
-								className={`self-${
-									index % 2 === 0 ? 'end' : 'start'
-								} p-3 text-center max-w-xs ${
-									index % 2 === 0 ? 'bg-mainColor text-white rounded-t-2xl rounded-l-2xl' : 'bg-violet-50 rounded-t-2xl rounded-r-2xl'
+								className={`p-3 text-center max-w-xs ${
+									index % 2 === 0
+										? 'bg-mainColor text-white rounded-t-2xl rounded-l-2xl ml-auto'
+										: 'bg-violet-50 rounded-t-2xl rounded-r-2xl mr-auto'
 								}`}>
 								{city}
 							</div>
@@ -168,6 +168,7 @@ const Game = ({ setVictory, setGameOn, usedCities, setUsedCities }) => {
 					</div>
 				)}
 			</div>
+
 			<form
 				onSubmit={formik.handleSubmit}
 				className='flex flex-col items-center'>

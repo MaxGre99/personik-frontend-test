@@ -3,7 +3,7 @@ import '../styles/index.css';
 
 const Welcome = ({ startGame }) => {
 	return (
-		<div className='w-full sm:w-2/3 md:w-1/2 lg:w-1/3 h-full sm:h-2/3 md:h-1/2 lg:1/3 text-base sm:text-lg md:text-xl lg:text-2xl border border-inherit shadow bg-white rounded-2xl'>
+		<div className='w-576 h-347 border border-inherit shadow bg-white rounded-2xl'>
 			<div className='flex items-center justify-center h-58'>
 				<h1>Игра в города на время</h1>
 			</div>
